@@ -2,6 +2,7 @@ package com.jad.view;
 
 import com.jad.controller.IController;
 import com.jad.model.IModel;
+import com.jad.model.IScreen;
 import com.jad.textwindow.TextWindow;
 import com.jad.textwindow.TextWindowSettings;
 
@@ -30,7 +31,7 @@ public class View implements IView {
 
     @Override
     public void display() {
-        Screen screen = this.model.getScreen(new Dimension(50, 50));
+        IScreen screen = this.model.getScreen(new Dimension(50, 50));
         StringBuilder screenTxt = new StringBuilder();
         for (int y = 0; y < screen.getHeight(); y++) {
             for (int x = 0; x < screen.getWidth(); x++) {

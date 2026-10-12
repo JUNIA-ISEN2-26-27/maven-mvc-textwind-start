@@ -1,9 +1,18 @@
-package com.jad.view;
+package com.jad.model;
+
+import com.jad.view.Pixel;
 
 import java.awt.*;
 
-public record Screen(Dimension dimension,
-                     Pixel[][] pixels) {
+abstract class AbstractPixelMatrix {
+    protected final Dimension dimension;
+    protected final Pixel[][] pixels;
+
+    protected AbstractPixelMatrix(final Dimension dimension, final Pixel[][] pixels) {
+        this.dimension = dimension;
+        this.pixels = pixels;
+    }
+
     public int getHeight() {
         return this.dimension.height;
     }

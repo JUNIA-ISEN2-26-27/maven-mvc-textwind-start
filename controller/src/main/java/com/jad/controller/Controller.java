@@ -19,8 +19,9 @@ public class Controller implements IController {
         this.model.loadMaze("level2.txt");
         for (; ; ) {
             try {
-                Thread.sleep(50);
+                Thread.sleep(10);
                 this.view.display();
+                this.model.live();
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
             }
