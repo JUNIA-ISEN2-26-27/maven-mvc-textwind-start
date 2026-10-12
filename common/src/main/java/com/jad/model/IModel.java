@@ -6,4 +6,5 @@ import java.awt.*;
 
 public interface IModel {
     Screen getScreen(Dimension dimension);
+    void loadMaze(final String fileName);
 }

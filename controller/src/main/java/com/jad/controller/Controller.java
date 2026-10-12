@@ -3,9 +3,6 @@ package com.jad.controller;
 import com.jad.model.IModel;
 import com.jad.view.IView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Controller implements IController {
     private final IModel model;
     private final IView view;
@@ -19,6 +16,14 @@ public class Controller implements IController {
 
     @Override
     public void proceed() {
-        this.view.display();
+        this.model.loadMaze("level2.txt");
+        for (; ; ) {
+            try {
+                Thread.sleep(50);
+                this.view.display();
+            } catch (InterruptedException exception) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 }
